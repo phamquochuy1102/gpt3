@@ -3,6 +3,22 @@
   justify-content: space-between;
   align-items: center;
   padding: 2rem 6rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: all 0.1s ease-in-out;
+}
+
+.gpt3__navbarBg {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 6rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: black;
+  transition: all 0.1s ease-in-out;
 }
 
 .gpt3__navbar-links {
@@ -115,10 +131,16 @@
   .gpt3__navbar {
     padding: 2rem 4rem;
   }
+  .gpt3__navbarBg {
+    padding: 2rem 4rem;
+  }
 }
 
 @media screen and (max-width: 550px) {
   .gpt3__navbar {
+    padding: 2rem;
+  }
+  .gpt3__navbarBg {
     padding: 2rem;
   }
   .gpt3__navbar-sign {

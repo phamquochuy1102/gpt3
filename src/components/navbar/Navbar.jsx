@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 import "./navbar.css";
 import logo from "../../assets/logo.svg";
@@ -26,8 +26,24 @@ const Menu = () => (
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
+  const [navbarBg, setNavbarBg] = useState(false);
+
+  const navbarRef = useRef();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= 80) {
+        setNavbarBg(true);
+      } else {
+        setNavbarBg(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="gpt3__navbar">
+    <div className={navbarBg ? "gpt3__navbarBg" : "gpt3__navbar"}>
       <div className="gpt3__navbar-links">
         <div className="gpt3__navbar-links_logo">
           <img src={logo} alt="logo" />
